@@ -1,0 +1,399 @@
+:root
+{
+    /* Colors */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Font Size */
+    --fs-b: 0.938rem;
+
+    /* Transition time */
+    --tr-t: 0.2s;
+}
+
+/* Links to the fonts used in this project. */
+
+@font-face 
+{
+    font-family: LeagueSpartan-Reg;
+    src: url('fonts/LeagueSpartan-Regular.ttf');
+}
+
+@font-face 
+{
+    font-family: LeagueSpartan-Med;
+    src: url('fonts/LeagueSpartan-Medium.ttf');
+}
+
+@font-face 
+{
+    font-family: LeagueSpartan-Bold;
+    src: url('fonts/LeagueSpartan-Bold.ttf');
+}
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body 
+{
+  margin: 0;
+  padding: 0 1.5rem 5rem;
+  min-height: 100vh;
+  line-height: 1.5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Project's CSS */
+
+.pattern-bottom,
+.pattern-top
+{
+  position: absolute;
+  width: 100%;
+}
+
+.pattern-top
+{
+  top: 0;
+  left: 0;
+  height: 232px;
+  background-image: url('images/bg-pattern-top-mobile.svg');
+}
+
+.pattern-bottom
+{
+  bottom: 0;
+  right: 0;
+  height: 503px;
+  background-image: url('images/bg-pattern-bottom-mobile.svg');
+}
+
+h1
+{
+  margin: 0;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  text-wrap: pretty;
+  padding: 80px 65px 0;
+  font-family: LeagueSpartan-Bold;
+  color: var(--very-dark-magenta);
+}
+
+.intro-section > p
+{
+  text-align: center;
+  text-wrap: pretty;
+  font-family: LeagueSpartan-Med;
+  font-size: var(--fs-b);
+  color: var(--dark-grayish-magenta);
+  margin-bottom: 20px;
+}
+
+.rating-container
+{
+  width: 100%;
+  background-color: var(--light-grayish-magenta);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.rating-container > span
+{
+  margin-bottom: 0.5rem;
+}
+
+.rating-container > h3
+{
+  margin: 0;
+  font-family: LeagueSpartan-Med;
+  color: var(--very-dark-magenta);
+}
+
+.review-container
+{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-dark-magenta);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.rating-section
+{
+  margin-bottom: 3rem;
+}
+
+.review-container > p
+{
+  font-family: LeagueSpartan-Reg;
+  font-size: var(--fs-b);
+  color: var(--light-grayish-magenta);
+}
+
+.user-container
+{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.8rem;
+}
+
+.user-container > img
+{
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.user-container > span
+{
+  display: inherit;
+  flex-direction: column;
+  padding: 0 2rem 0;
+}
+
+.user-container > span > h4
+{
+  margin: 0;
+  color: var(--white);
+  font-family: LeagueSpartan-Med;
+}
+
+.user-container > span > span
+{
+  height: 0.3rem;
+}
+
+.user-container > span > label
+{
+  color: var(--soft-pink);
+  font-family: LeagueSpartan-Reg;
+}
+
+footer 
+{
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+}
+
+footer a 
+{
+  color: hsl(228, 45%, 44%);
+}
+
+
+@media only screen and (min-width: 1440px)
+{
+  body
+  {
+    padding: 7rem 11rem 5rem;
+    overflow: hidden;
+  }
+
+  main
+  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.5fr 1fr;
+  }
+
+  .intro-section
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 12rem;
+  }
+
+  h1
+  {
+    padding: 0;
+    line-height: 0.85;
+    text-align: start;
+    font-size: 3.5rem;
+    margin-right: 10rem;
+  }
+
+  .intro-section > p
+  {
+    text-align: start;
+    font-size: larger;
+    line-height: 1.4;
+    margin-right: 70px;
+  }
+
+  .rating-section
+  {
+    padding: 2rem 0 0 4rem;
+    display: grid;
+    grid-template-columns: repeat(12, 4rem);
+    grid-template-rows: repeat(3, 4rem);
+    margin: 0;
+  }
+
+  .rating-container:nth-child(1)
+  {
+    grid-column: 2 / 11;
+  }
+
+  .rating-container:nth-child(2)
+  {
+    grid-row: 2 / 3;
+    grid-column: 3 / 12;
+  }
+
+  .rating-container:nth-child(3)
+  {
+    grid-row: 3 / 4;
+    grid-column: 4 / 13;
+  }
+  
+  .rating-container
+  {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2.5rem;
+  }
+
+  .rating-container > span
+  {
+    display: flex;
+    margin: 0;
+    margin-right: 2rem;
+    column-gap: 0.5rem;
+  }
+  
+  .reviews-section
+  {
+    margin-top: 5rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 2rem);
+    column-gap: 2rem;
+  }
+
+  .review-container
+  {
+    margin: 0;
+  }
+
+  .review-container > p
+  {
+    font-size: 1.1rem;
+  }
+
+  .review-container:nth-child(1)
+  {
+    grid-row: 1 / 8;
+  }
+
+  .review-container:nth-child(2)
+  {
+    /* grid-column: 2 / 3; */
+    grid-row: 2 / 9;
+  }
+
+  .review-container:nth-child(3)
+  {
+    grid-row: 3 / 10;
+
+  }
+
+  .pattern-top
+  {
+    width: 584px;
+    height: 362px;
+    background-image: url('images/bg-pattern-top-desktop.svg');
+  }
+
+  .pattern-bottom
+  {
+    width: 1085px;
+    height: 673px;
+    background-image: url('images/bg-pattern-bottom-desktop.svg');
+  }
+}
+
