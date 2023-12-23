@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site on GitHub](https://amarcyclechurikoiraloiaghese.github.io/Social-Proof-Component-Main/)
 
 ### Built with
 
